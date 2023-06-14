@@ -12,14 +12,6 @@ node {
        app = docker.build("leelavathidh/test_repo_docker_image")
     }
 
-    stage('Test image') {
-  
-
-        app.inside {
-            sh 'echo "Tests passed"'
-        }
-    }
-
     stage('Push image') {
         
         docker.withRegistry('https://hub.docker.com', 'DOCKERHUB') {
