@@ -14,7 +14,7 @@ node {
 
     stage('Push image') {
         
-        docker.withRegistry('https://hub.docker.com', 'DOCKERHUB') {
+        docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUB') {
             app.push("${env.BUILD_NUMBER}")
         }
     }
